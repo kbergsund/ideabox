@@ -12,7 +12,9 @@
   left: 0;
   overflow-x: hidden;
   padding-top: 20px;
-  border: solid black
+  border: solid black;
+  background: #1F1F3D;
+  color: white
 }
 
 .create-idea {
@@ -20,17 +22,30 @@
     flex-direction: column;
     position: fixed;
     top: 1%;
-    right: 22%;
+    right: 0%;
     padding: 10%;
-    width: 30%;
+    height: 21%;
+    width: 61%;
     border: solid black;
+    background: #A9AAD2;
 }
 
 .card-section {
     border: solid black;
     position: fixed;
     bottom: 1%;
-    right: 22%;
+    right: 0%;
     padding: 10%;
-    width: 30%;
+    height: 3%;
+    width: 61%;
+    background: #EAEAF4;
+}
+
+.idea-card {
+    border: solid black;
+    width: 14%;
+    padding: 2%;
+    position: relative;
+    bottom: 104px;
+    left: -58px;
 }
