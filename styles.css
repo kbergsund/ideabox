@@ -1,5 +1,5 @@
 * {
-  font-style: 'Open Sans'
+  font-family: 'Open Sans'
 }
 
 
@@ -43,9 +43,26 @@
 
 .idea-card {
     border: solid black;
-    width: 14%;
-    padding: 2%;
+    width: 20%;
+    height: auto;
+    padding: 1%;
     position: relative;
     bottom: 104px;
+    display: flex;
     left: -58px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: center;
+}
+
+.star-image {
+    height: 25px;
+}
+
+.delete-image{
+  height: 25px;
+}
+
+.comment-image{
+  height: 25px;
 }
