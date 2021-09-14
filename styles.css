@@ -1,0 +1,36 @@
+* {
+  font-style: 'Open Sans'
+}
+
+
+.sidenav {
+  height: 100%;
+  width: 18%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+  border: solid black
+}
+
+.create-idea {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 1%;
+    right: 22%;
+    padding: 10%;
+    width: 30%;
+    border: solid black;
+}
+
+.card-section {
+    border: solid black;
+    position: fixed;
+    bottom: 1%;
+    right: 22%;
+    padding: 10%;
+    width: 30%;
+}
