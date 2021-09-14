@@ -35,10 +35,13 @@
     position: fixed;
     bottom: 1%;
     right: 0%;
+    display: flex;
     padding: 10%;
     height: 3%;
     width: 61%;
     background: #EAEAF4;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
 
 .idea-card {
@@ -65,4 +68,15 @@
 
 .comment-image{
   height: 25px;
+}
+
+.card-top {
+    background: #1F1F3D;
+    flex: auto;
+}
+
+.card-bottom {
+    background: #5356A4;
+    color: #E9E9F3;
+    flex: auto;
 }
