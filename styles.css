@@ -1,51 +1,124 @@
+/* ~~~~~ GLOBAL RULES ~~~~~ */
+
 * {
-  font-style: 'Open Sans'
+  font-family: 'Open Sans';
+  box-sizing: border-box;
+  /* border: 1px solid black; */
 }
 
+body {
+  margin: auto;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+section,
+article {
+}
+
+h1 {
+  color: #E9E9F3;
+  padding-left: 5%;
+}
+
+h3 {
+  color: #BFBFDD;
+}
+
+h4,
+p {
+  margin: 0;
+  padding: 3%;
+}
+
+h4 {
+  margin-top: 3%;
+}
+
+p {
+  margin-bottom: 3%;
+}
+
+/* ~~~~~ SIDEBAR RULES ~~~~~ */
 
 .sidenav {
-  height: 100%;
-  width: 18%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  overflow-x: hidden;
-  padding-top: 20px;
-  border: solid black;
+  width: 30%;
+  padding-top: 10px;
   background: #1F1F3D;
-  color: white
+  color: white;
+}
+
+.sidenav div {
+  padding: 15px;
+  border-top: 3px solid #353567;
+  border-bottom: 3px solid #353567;
+}
+
+/* ~~~~~ MAIN SECTION RULES ~~~~~ */
+
+.rightside {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .create-idea {
     display: flex;
     flex-direction: column;
-    position: fixed;
-    top: 1%;
-    right: 0%;
-    padding: 10%;
-    height: 21%;
-    width: 61%;
-    border: solid black;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 70%;
     background: #A9AAD2;
 }
 
+.form-div label {
+  display: block;
+}
+
 .card-section {
-    border: solid black;
-    position: fixed;
-    bottom: 1%;
-    right: 0%;
-    padding: 10%;
-    height: 3%;
-    width: 61%;
+    height: 100%;
     background: #EAEAF4;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 .idea-card {
-    border: solid black;
-    width: 14%;
-    padding: 2%;
-    position: relative;
-    bottom: 104px;
-    left: -58px;
+    background-color: #ffffff;
+    border: 1px solid #353567;
+    width: 25%;
+    height: auto;
+    margin: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.idea-card img {
+  height: 25px;
+  margin: 2%;
+}
+
+.card-top {
+    background: #1F1F3D;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: #5356A4;
+    color: #E9E9F3;
+}
+
+.card-bottom p {
+  padding: 0;
+  margin: 0;
 }
