@@ -125,10 +125,17 @@ img {
 }
 
 .create-idea button {
+
   background: #5356A4;
   color:#E9E9F3;
-}
+ }
 
 .search-field {
   display: flex;
+}
+
+.enabled-button{
+  background: #5356A4;
+  color:#E9E9F3;
+  cursor: pointer;
 }
