@@ -81,11 +81,12 @@ p {
 }
 
 .card-section {
-    height: 100%;
-    background: #EAEAF4;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+  height: 100%;
+  background: #EAEAF4;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .idea-card {
@@ -99,7 +100,7 @@ p {
     align-items: stretch;
 }
 
-.idea-card img {
+img {
   height: 25px;
   margin: 2%;
 }
@@ -121,4 +122,13 @@ p {
 .card-bottom p {
   padding: 0;
   margin: 0;
+}
+
+.create-idea button {
+  background: #5356A4;
+  color:#E9E9F3;
+}
+
+.search-field {
+  display: flex;
 }
