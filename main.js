@@ -12,11 +12,26 @@ var cardSection = document.querySelector('#js-card-section')
 saveButton.addEventListener('click', saveToCard);
 titleInput.addEventListener('input', enableSaveButton);
 bodyInput.addEventListener('input', enableSaveButton);
-
+cardSection.addEventListener('click', deleteCard);
 
 function render(title, body) {
 var newIdea = new Idea({ title: title, body: body })
 ideaCards.push(newIdea);
+}
+
+function enableSaveButton(){
+  saveButton.disabled = false;
+  saveButton.classList.add('enabled');
+}
+
+function disableSaveButton(){
+  saveButton.disabled = true;
+  saveButton.classList.remove('enabled')
+}
+
+function clearInputs(){
+  titleInput.value = '';
+  bodyInput.value = '';
 }
 
 function saveToCard() {
@@ -25,9 +40,9 @@ function saveToCard() {
     `<article class = 'idea-card'>
     <div class = "card-top">
       <img src="./assets/star.svg">
-      <img src="./assets/delete.svg">
+      <img class="delete-img" src="./assets/delete.svg">
     </div>
-      <h4>${titleInput.value}</h4>
+      <h3>${titleInput.value}</h3>
       <p>${bodyInput.value}</p>
     <div class = "card-bottom">
       <img src="./assets/comment.svg" class = "comment-image">
@@ -39,16 +54,19 @@ function saveToCard() {
   disableSaveButton();
 }
 
-function enableSaveButton(){
-    saveButton.disabled = false;
-    saveButton.classList.add('enabled-button')
+function deleteCard() {
+  if (event.target.classList.contains('delete-img')) {
+    var parentCard = event.target.closest('article');
+    parentCard.classList.add('hidden');
   }
-
-function disableSaveButton(){
-  saveButton.disabled = true;
+  removeIdea(parentCard);
 }
 
-function clearInputs(){
-  titleInput.value = '';
-  bodyInput.value = '';
+function removeIdea(parentCard) {
+  for (var i = 0; i < ideaCards.length; i++) {
+    var cardTitle = parentCard.childNodes[3].innerText;
+    if (cardTitle === ideaCards[i].title) {
+      ideaCards.splice(i, 1);
+    }
+  }
 }
