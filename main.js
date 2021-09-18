@@ -52,3 +52,20 @@ function clearInputs(){
   titleInput.value = '';
   bodyInput.value = '';
 }
+
+function deleteCard() {
+  if (event.target.classList.contains('delete-img')) {
+    console.log('you clicked the X button');
+    event.target.parentNode.parentNode.classList.add('hidden');
+  }
+  removeIdea();
+}
+
+function removeIdea(){
+  for (var i = 0; i < ideaCards.length; i++){
+    if (event.target.parentNode.parentNode.childNodes[3].innerText === ideaCards[i].title){
+      ideaCards.splice(i, 1);
+      console.log(ideaCards);
+    }
+  }
+}
