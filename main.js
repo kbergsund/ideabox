@@ -13,33 +13,38 @@ saveButton.addEventListener('click', saveToCard);
 titleInput.addEventListener('input', enableSaveButton);
 bodyInput.addEventListener('input', enableSaveButton);
 cardSection.addEventListener('click', deleteCard);
+cardSection.addEventListener('click', clickStar);
 
 function render(title, body) {
-var newIdea = new Idea({ title: title, body: body })
-ideaCards.push(newIdea);
+  var newIdea = new Idea({
+    title: title,
+    body: body
+  })
+  ideaCards.push(newIdea);
 }
 
-function enableSaveButton(){
+function enableSaveButton() {
   saveButton.disabled = false;
   saveButton.classList.add('enabled');
 }
 
-function disableSaveButton(){
+function disableSaveButton() {
   saveButton.disabled = true;
   saveButton.classList.remove('enabled')
 }
 
-function clearInputs(){
+function clearInputs() {
   titleInput.value = '';
   bodyInput.value = '';
 }
 
 function saveToCard() {
-    render(titleInput.value, bodyInput.value)
-    cardSection.innerHTML +=
+  render(titleInput.value, bodyInput.value)
+  cardSection.innerHTML +=
     `<article class = 'idea-card'>
     <div class = "card-top">
-      <img src="./assets/star.svg">
+      <img class="star-img" id="clearStar" src="./assets/star.svg">
+      <img class="star-img hidden" id="filledStar" src="./assets/star-active.svg">
       <img class="delete-img" src="./assets/delete.svg">
     </div>
       <h3>${titleInput.value}</h3>
@@ -58,8 +63,8 @@ function deleteCard() {
   if (event.target.classList.contains('delete-img')) {
     var parentCard = event.target.closest('article');
     parentCard.classList.add('hidden');
+    removeIdea(parentCard);
   }
-  removeIdea(parentCard);
 }
 
 function removeIdea(parentCard) {
@@ -71,19 +76,35 @@ function removeIdea(parentCard) {
   }
 }
 
-function deleteCard() {
-  if (event.target.classList.contains('delete-img')) {
-    console.log('you clicked the X button');
-    event.target.parentNode.parentNode.classList.add('hidden');
-  }
-  removeIdea();
-}
-
-function removeIdea(){
-  for (var i = 0; i < ideaCards.length; i++){
-    if (event.target.parentNode.parentNode.childNodes[3].innerText === ideaCards[i].title){
-      ideaCards.splice(i, 1);
-      console.log(ideaCards);
+function clickStar() {
+  for (var i = 0; i < ideaCards.length; i++) {
+    if (event.target.classList.contains('star-img')) {
+      var parentCard = event.target.closest('article');
+      var cardTitle = parentCard.childNodes[3].innerText;
+      if (cardTitle === ideaCards[i].title && ideaCards[i].star === false) {
+        ideaCards[i].star = true;
+        console.log(ideaCards[i].star);
+        console.log(parentCard.childNodes);
+        redStar(parentCard);
+      } else if (cardTitle === ideaCards[i].title && ideaCards[i].star === true){
+        ideaCards[i].star = false;
+        console.log(ideaCards[i].star)
+        whiteStar(parentCard)
+      }
     }
   }
+}
+
+function redStar(parentCard){
+  var whiteStar = parentCard.childNodes[1].childNodes[1];
+  var redStar = parentCard.childNodes[1].childNodes[3];
+  whiteStar.classList.add('hidden');
+  redStar.classList.remove('hidden');
+}
+
+function whiteStar(parentCard){
+  var whiteStar = parentCard.childNodes[1].childNodes[1];
+  var redStar = parentCard.childNodes[1].childNodes[3];
+  whiteStar.classList.remove('hidden');
+  redStar.classList.add('hidden');
 }
