@@ -4,9 +4,10 @@ var ideaCards = [];
 
 // querySelectors
 var saveButton = document.querySelector('#js-save');
-var titleInput = document.querySelector('#title-input')
-var bodyInput = document.querySelector('#body-input')
-var cardSection = document.querySelector('#js-card-section')
+var titleInput = document.querySelector('#title-input');
+var bodyInput = document.querySelector('#body-input');
+var cardSection = document.querySelector('#js-card-section');
+var showStarredButton = document.querySelector('#show-starred');
 
 // Event Listeners
 saveButton.addEventListener('click', saveToCard);
@@ -14,6 +15,7 @@ titleInput.addEventListener('input', enableSaveButton);
 bodyInput.addEventListener('input', enableSaveButton);
 cardSection.addEventListener('click', deleteCard);
 cardSection.addEventListener('click', clickStar);
+showStarredButton.addEventListener('click', showStarred);
 
 function render(title, body) {
   var newIdea = new Idea({
@@ -44,7 +46,6 @@ function saveToCard() {
     `<article class = 'idea-card'>
     <div class = "card-top">
       <img class="star-img" id="clearStar" src="./assets/star.svg">
-      <img class="star-img hidden" id="filledStar" src="./assets/star-active.svg">
       <img class="delete-img" src="./assets/delete.svg">
     </div>
       <h3>${titleInput.value}</h3>
@@ -54,7 +55,6 @@ function saveToCard() {
       <p>Comment</p>
     </div>
   </article>`
-  console.log(ideaCards)
   clearInputs();
   disableSaveButton();
 }
@@ -84,8 +84,7 @@ function clickStar() {
       if (cardTitle === ideaCards[i].title && ideaCards[i].star === false) {
         ideaCards[i].star = true;
         console.log(ideaCards[i].star);
-        console.log(parentCard.childNodes);
-        redStar(parentCard);
+        orangeStar(parentCard);
       } else if (cardTitle === ideaCards[i].title && ideaCards[i].star === true){
         ideaCards[i].star = false;
         console.log(ideaCards[i].star)
@@ -95,16 +94,16 @@ function clickStar() {
   }
 }
 
-function redStar(parentCard){
-  var whiteStar = parentCard.childNodes[1].childNodes[1];
-  var redStar = parentCard.childNodes[1].childNodes[3];
-  whiteStar.classList.add('hidden');
-  redStar.classList.remove('hidden');
+function orangeStar(parentCard){
+  var starImage = parentCard.childNodes[1].childNodes[1];
+  starImage.src = "./assets/star-active.svg"
 }
 
 function whiteStar(parentCard){
-  var whiteStar = parentCard.childNodes[1].childNodes[1];
-  var redStar = parentCard.childNodes[1].childNodes[3];
-  whiteStar.classList.remove('hidden');
-  redStar.classList.add('hidden');
+  var starImage = parentCard.childNodes[1].childNodes[1];
+  starImage.src = "./assets/star.svg"
+}
+
+function showStarred(){
+  console.log('you clicked the showStarredButton')
 }
