@@ -43,7 +43,8 @@ function saveToCard() {
   cardSection.innerHTML +=
     `<article class = 'idea-card'>
     <div class = "card-top">
-      <img class="star-img" src="./assets/star.svg">
+      <img class="star-img" id="clearStar" src="./assets/star.svg">
+      <img class="star-img hidden" id="filledStar" src="./assets/star-active.svg">
       <img class="delete-img" src="./assets/delete.svg">
     </div>
       <h3>${titleInput.value}</h3>
@@ -62,8 +63,8 @@ function deleteCard() {
   if (event.target.classList.contains('delete-img')) {
     var parentCard = event.target.closest('article');
     parentCard.classList.add('hidden');
+    removeIdea(parentCard);
   }
-  removeIdea(parentCard);
 }
 
 function removeIdea(parentCard) {
@@ -82,11 +83,28 @@ function clickStar() {
       var cardTitle = parentCard.childNodes[3].innerText;
       if (cardTitle === ideaCards[i].title && ideaCards[i].star === false) {
         ideaCards[i].star = true;
-        console.log(ideaCards[i].star)
+        console.log(ideaCards[i].star);
+        console.log(parentCard.childNodes);
+        redStar(parentCard);
       } else if (cardTitle === ideaCards[i].title && ideaCards[i].star === true){
         ideaCards[i].star = false;
         console.log(ideaCards[i].star)
+        whiteStar(parentCard)
       }
     }
   }
+}
+
+function redStar(parentCard){
+  var whiteStar = parentCard.childNodes[1].childNodes[1];
+  var redStar = parentCard.childNodes[1].childNodes[3];
+  whiteStar.classList.add('hidden');
+  redStar.classList.remove('hidden');
+}
+
+function whiteStar(parentCard){
+  var whiteStar = parentCard.childNodes[1].childNodes[1];
+  var redStar = parentCard.childNodes[1].childNodes[3];
+  whiteStar.classList.remove('hidden');
+  redStar.classList.add('hidden');
 }
