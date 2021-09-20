@@ -18,16 +18,11 @@ cardSection.addEventListener('click', clickStar);
 showStarredButton.addEventListener('click', showStarred);
 window.addEventListener('load', refreshPage);
 
-// When I create one idea successfully, then refresh the page,
-// The idea card instance is still in the ideas array
-// The idea card is still visible on the DOM
-
-// function to reload cards on page refresh if item in local storage
-// check if there are items in localstorage.
-// repopulate global array on page load- both DOM and data model
+// When I create two cards successfully, delete one, then refresh the page,
+// One idea instance is still in the ideas array (the one I did not delete)
+// One idea card is still visible on the DOM (the one I did not delete)
 
 function refreshPage() {
-
   for (var i = 0; i < localStorage.length; i++) {
     console.log(localStorage.key(i));
     var objectToGet = localStorage.key(i);
@@ -40,26 +35,8 @@ function refreshPage() {
     // get whole local saveToStorage
     // parse entire saveToStorage
   }
+  loadDOM();
 }
-  // for (var i = ideaCards.length - 1; i >= 0; i--) {
-  //   cardSection.innerHTML +=
-  //     `<article class = 'idea-card'>
-  //     <div class = "card-top">
-  //       <img class="star-img" id="clearStar" src="./assets/star.svg">
-  //       <img class="delete-img" src="./assets/delete.svg">
-  //     </div>
-  //       <h3>${ideaCards[i].title}</h3>
-  //       <p>${ideaCards[i].body}</p>
-  //     <div class = "card-bottom">
-  //       <img src="./assets/comment.svg" class = "comment-image">
-  //       <p>Comment</p>
-  //     </div>
-  //   </article>`
-  // }
-    // getitem(i)
-    // parseitem(i)
-    // push to ideaCards array
-    // cardSection.innerHTML +=
 // }
 
 function render(title, body) {
@@ -87,21 +64,28 @@ function clearInputs() {
 
 function saveToCard() {
   render(titleInput.value, bodyInput.value)
-  cardSection.innerHTML +=
-    `<article class = 'idea-card'>
-      <div class = "card-top">
-        <img class="star-img" id="clearStar" src="./assets/star.svg">
-        <img class="delete-img" src="./assets/delete.svg">
-      </div>
-        <h3>${titleInput.value}</h3>
-        <p>${bodyInput.value}</p>
-      <div class = "card-bottom">
-        <img src="./assets/comment.svg" class = "comment-image">
-        <p>Comment</p>
-      </div>
-    </article>`
+  loadDOM();
   clearInputs();
   disableSaveButton();
+}
+
+function loadDOM() {
+  cardSection.innerHTML = '';
+  for (var i = 0; i < ideaCards.length; i++) {
+    cardSection.innerHTML +=
+      `<article class = 'idea-card'>
+        <div class = "card-top">
+          <img class="star-img" id="clearStar" src="./assets/star.svg">
+          <img class="delete-img" src="./assets/delete.svg">
+        </div>
+          <h3>${ideaCards[i].title}</h3>
+          <p>${ideaCards[i].body}</p>
+        <div class = "card-bottom">
+          <img src="./assets/comment.svg" class = "comment-image">
+          <p>Comment</p>
+        </div>
+      </article>`
+  }
 }
 
 function deleteCard() {
@@ -118,6 +102,7 @@ function removeIdea(parentCard) {
     var cardTitle = parentCard.childNodes[3].innerText;
     if (cardTitle === ideaCards[i].title) {
       ideaCards.splice(i, 1);
+      // localStorage.removeItem();
     }
   }
 }
@@ -129,11 +114,11 @@ function clickStar() {
       var cardTitle = parentCard.childNodes[3].innerText;
       if (cardTitle === ideaCards[i].title && !ideaCards[i].star) {
         ideaCards[i].star = true;
-        // console.log(ideaCards[i].star);
+        console.log(ideaCards[i].star);
         orangeStar(parentCard);
       } else if (cardTitle === ideaCards[i].title && ideaCards[i].star) {
         ideaCards[i].star = false;
-        // console.log(ideaCards[i].star)
+        console.log(ideaCards[i].star)
         whiteStar(parentCard)
       }
     }
