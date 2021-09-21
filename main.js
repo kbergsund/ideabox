@@ -126,17 +126,17 @@ function clickStar() {
   }
 }
 
-function orangeStar(parentCard){
+function orangeStar(parentCard) {
   console.log('orange');
   var starImage = parentCard.childNodes[1].childNodes[1];
   starImage.src = "./assets/star-active.svg"
 }
 
-function whiteStar(parentCard){
+function whiteStar(parentCard) {
   var starImage = parentCard.childNodes[1].childNodes[1];
   starImage.src = "./assets/star.svg"
 }
 
-function showStarred(){
+function showStarred() {
   console.log('you clicked the showStarredButton')
 }

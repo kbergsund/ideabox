@@ -14,13 +14,13 @@ class Idea {
     }
   }
 
-  saveToStorage(){
+  saveToStorage() {
     var stringifiedIdea = JSON.stringify(this);
     localStorage.setItem(`${this.id}`, stringifiedIdea);
     ideaCards.push(this);
   }
 
-  deleteFromStorage(ideaInstance, index){
+  deleteFromStorage(ideaInstance, index) {
     ideaCards.splice(index, 1);
     localStorage.removeItem(localStorage.key(index));
   }
