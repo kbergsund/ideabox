@@ -1,8 +1,4 @@
-// var Idea = require("./Idea.js")
-
-var ideaCards = [];
-
-// querySelectors
+// Query Selectors
 var saveButton = document.querySelector('#js-save');
 var titleInput = document.querySelector('#title-input');
 var bodyInput = document.querySelector('#body-input');
@@ -18,26 +14,22 @@ cardSection.addEventListener('click', clickStar);
 showStarredButton.addEventListener('click', showStarred);
 window.addEventListener('load', refreshPage);
 
-// When I create two cards successfully, delete one, then refresh the page,
-// One idea instance is still in the ideas array (the one I did not delete)
-// One idea card is still visible on the DOM (the one I did not delete)
+// Global Variables
+var ideaCards = [];
 
+
+// Functions & Event Handlers
 function refreshPage() {
   for (var i = 0; i < localStorage.length; i++) {
-    console.log(localStorage.key(i));
     var objectToGet = localStorage.key(i);
-    console.log(localStorage.getItem(objectToGet));
     var objectToParse = localStorage.getItem(objectToGet);
-    console.log(JSON.parse(objectToParse));
     var parsedObject = JSON.parse(objectToParse);
-    ideaCards.push(parsedObject);
-    console.log("ideaCards " + ideaCards);
-    // get whole local saveToStorage
-    // parse entire saveToStorage
+    var ideaInstance = new Idea(parsedObject);
+    console.log(ideaInstance);
+    ideaCards.push(ideaInstance);
   }
   loadDOM();
 }
-// }
 
 function render(title, body) {
   var newIdea = new Idea({
@@ -72,10 +64,15 @@ function saveToCard() {
 function loadDOM() {
   cardSection.innerHTML = '';
   for (var i = 0; i < ideaCards.length; i++) {
+    if (ideaCards[i].star) {
+      var imgSrc = "./assets/star-active.svg";
+    } else {
+      var imgSrc = "./assets/star.svg";
+    }
     cardSection.innerHTML +=
       `<article class = 'idea-card'>
         <div class = "card-top">
-          <img class="star-img" id="clearStar" src="./assets/star.svg">
+          <img class="star-img" id="clearStar" src=${imgSrc}>
           <img class="delete-img" src="./assets/delete.svg">
         </div>
           <h3>${ideaCards[i].title}</h3>
@@ -91,10 +88,15 @@ function loadDOM() {
 function deleteCard() {
   if (event.target.classList.contains('delete-img')) {
     var parentCard = event.target.closest('article');
+    var cardTitle = parentCard.childNodes[3].innerText;
+    for (var i = 0; i < ideaCards.length; i++) {
+      if (cardTitle === ideaCards[i].title) {
+        console.log(ideaCards[i]);
+        ideaCards[i].deleteFromStorage(parentCard, i);
+      }
+    }
     parentCard.classList.add('hidden');
-    removeIdea(parentCard);
   }
-
 }
 
 function removeIdea(parentCard) {
@@ -102,7 +104,7 @@ function removeIdea(parentCard) {
     var cardTitle = parentCard.childNodes[3].innerText;
     if (cardTitle === ideaCards[i].title) {
       ideaCards.splice(i, 1);
-      // localStorage.removeItem();
+      localStorage.removeItem(localStorage.key(i));
     }
   }
 }
@@ -113,12 +115,11 @@ function clickStar() {
       var parentCard = event.target.closest('article');
       var cardTitle = parentCard.childNodes[3].innerText;
       if (cardTitle === ideaCards[i].title && !ideaCards[i].star) {
-        ideaCards[i].star = true;
-        console.log(ideaCards[i].star);
+        ideaCards[i].updateIdea(i);
+        // this is not properly running after a user unfavorites and tries to refavorite a red star after reload.
         orangeStar(parentCard);
       } else if (cardTitle === ideaCards[i].title && ideaCards[i].star) {
-        ideaCards[i].star = false;
-        console.log(ideaCards[i].star)
+        ideaCards[i].updateIdea(i);
         whiteStar(parentCard)
       }
     }
@@ -126,6 +127,7 @@ function clickStar() {
 }
 
 function orangeStar(parentCard){
+  console.log('orange');
   var starImage = parentCard.childNodes[1].childNodes[1];
   starImage.src = "./assets/star-active.svg"
 }
