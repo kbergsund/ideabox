@@ -1,9 +1,9 @@
 class Idea {
-  constructor(idea){
+  constructor(idea) {
     if (!idea.id) {
       this.id = Date.now();
     } else {
-      this.id = idea.id
+      this.id = idea.id;
     }
     this.title = idea.title;
     this.body = idea.body;
@@ -14,31 +14,28 @@ class Idea {
     }
   }
 
-  saveToStorage(){
+  saveToStorage() {
     var stringifiedIdea = JSON.stringify(this);
     localStorage.setItem(`${this.id}`, stringifiedIdea);
     ideaCards.push(this);
   }
 
-  deleteFromStorage(ideaInstance, index){
+  deleteFromStorage(ideaInstance, index) {
     ideaCards.splice(index, 1);
     localStorage.removeItem(localStorage.key(index));
   }
 
-  updateIdea(index) {
-    var objToParse = localStorage.getItem(localStorage.key(index));
+  updateIdea() {
+    var objToParse = localStorage.getItem(this.id);
     var starredObject = JSON.parse(objToParse);
-    console.log(starredObject);
-    if (starredObject.star === false) {
+    if (!starredObject.star) {
       starredObject.star = true;
       this.star = true;
     } else {
       starredObject.star = false;
       this.star = true;
     }
-    console.log(starredObject);
     var newToStore = JSON.stringify(starredObject);
     localStorage.setItem(`${this.id}`, newToStore);
-    console.log(newToStore);
   }
 }
