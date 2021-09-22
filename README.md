@@ -11,7 +11,7 @@ Mod1 2108 FE
   - [Project Specs](#project-specs)
 
 ## Abstract
-	This project is designed to allow a user to generate their own ideas and save and modify them by interacting with the page. 
+  This project is designed to allow a user to generate their own ideas and save and modify them by interacting with the page. 
 
   Upon page load, the user will see a fairly empty page. The user will have the ability to enter their own title, and body and generate a card by pressing the **Save** button at the top center of the page. 
 
@@ -33,7 +33,7 @@ Mod1 2108 FE
 
 
 ## Install + Setup
-	- clone this repo: https://github.com/kbergsund/ideabox
+  - clone this repo: https://github.com/kbergsund/ideabox
   - On the command line, type: **$ open index.html**
 
 ## Contributors
@@ -43,16 +43,16 @@ Mod1 2108 FE
 
 ## Wins
   - Completed iterations 1 - 3 and completed half of iteration 4 (the local storage implementation).
-	- Gained valuable experience in the challenges of group dynamics, scheduling, working asyncronously vs syncronously.
+  - Gained valuable experience in the challenges of group dynamics, scheduling, working asyncronously vs syncronously.
   - Learned a lot about how much work it is to have a DOM that accurately reflects your Data Model
   - gained some valuable first-hand experience in implementing local storage into a live project. 
   - ran an effective process with working in separate branches, opening pull requests with proper comments, and merging branches on GitHub only with others present.
 
 ## Challenges + Improvements
-	- Working asyncronously vs syncronously. Group scheduling conflicts made it difficult for us to find many times where all 3 of us could be present and working at the exact same time.
-  - Because of this and the challenge of the project, we unfortunately did not finish the entire spec. We fully completed iterations 0-3, but we only got halfway through iteration 4 (the local storage features) but were not able to complete the filtering functionalities in iteration 4, or any of iteration 5. 
+- Working asyncronously vs syncronously. Group scheduling conflicts made it difficult for us to find many times where all 3 of us could be present and working at the exact same time.
+- Because of this and the challenge of the project, we unfortunately did not finish the entire spec. We fully completed iterations 0-3, but we only got halfway through iteration 4 (the local storage features) but were not able to complete the filtering functionalities in iteration 4, or any of iteration 5. 
 	
 
 ## Project Specs
-  - The project spec & rubric can be found [here](https://frontend.turing.edu/projects/module-1/hang-in-there.html)
-  - Our deployed page is [here](https://colganmeanor.github.io/hang-in-there-boilerplate/).
+  - The project spec & rubric can be found [here](https://frontend.turing.edu/projects/module-1/ideabox-group.html)
+  - Our deployed page is [here](https://kbergsund.github.io/ideabox/)
