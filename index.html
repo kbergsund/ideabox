@@ -11,34 +11,36 @@
 
 <body>
   <main>
-    <section class = 'sidenav'>
+    <section class="sidenav">
       <h1>IdeaBox</h1>
       <div>
         <h2>Filter Starred Ideas</h2>
-        <button id = "show-starred">Show Starred Ideas</button>
+        <button id="showStarred">Show Starred Ideas</button>
       </div>
     </section>
-    <div class="rightside">
+    <section class="rightside">
       <section class="create-idea">
         <div class="form-elements">
           <label for="title-input">Title</label>
-          <input type="text" id="title-input" name="title-input">
+          <input type="text" id="titleInput" name="title-input">
         </div>
         <div class="form-elements">
           <label for="body-input">Body</label>
-          <input type="text" id="body-input" name="body-input">
+          <input type="text" id="bodyInput" name="body-input">
         </div>
-        <button class="form-elements" id="js-save" disabled>Save</button>
-      <div class="form-elements search-field">
+        <button class="form-elements" id="saveButton" disabled>Save</button>
+        <div class="form-elements search-field">
           <button type="button"><img src="./assets/search.svg"></button>
-        <input type = "text" placeholder="Search Ideas"</input>
-      </div>
+          <input type="text" placeholder="Search Ideas" </input>
+        </div>
       </section>
-      <section class = 'card-section'id = "js-card-section">
+      <section class="card-section" id="cardSection">
         <!-- Idea cards go here -->
       </section>
-    <div>
+    </section>
   </main>
-  <script type = "text/javascript" src = "Idea.js"></script>
-  <script type = "text/javascript" src = "main.js"></script>
+  <script type="text/javascript" src="Idea.js"></script>
+  <script type="text/javascript" src="main.js"></script>
 </body>
+
+</html>
