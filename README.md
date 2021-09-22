@@ -6,26 +6,33 @@ Mod1 2108 FE
   - [Technologies](#technologies)
   - [Install + Setup](#set-up)
   - [Contributors](#contributors)
-	- [Wins](#wins)
-	- [Challenges + Improvements](#challenges-+-Improvements)
+  - [Wins](#wins)
+  - [Challenges + Improvements](#challenges-+-Improvements)
   - [Project Specs](#project-specs)
 
 ## Abstract
   This project is designed to allow a user to generate their own ideas and save and modify them by interacting with the page. 
 
   Upon page load, the user will see a fairly empty page. The user will have the ability to enter their own title, and body and generate a card by pressing the **Save** button at the top center of the page. 
+  
+  ![Idea Card - Generate Card](https://user-images.githubusercontent.com/87510749/134266874-4d5d83ce-1b85-443c-a485-dedb3a21b4a4.gif)
 
   The user can generate as many cards as they would like, and the cards will appear in the card section at the bottom half of the page. 
 
   Once the card has been created, the user can click the **Star Button** to favorite and unfavorite an idea card at their discretion. Once a star is favorited, the star will turn Orange!
   
-  Users also have the ability to delete any card that they have created by clicking the **X** button at the top right corner of a given card. 
+  ![Idea Box- Favorite Card](https://user-images.githubusercontent.com/87510749/134267287-ad8e3503-ae4b-4b5c-a355-7fe0460b21f1.gif)
 
-  Finally, the cards that a user creates will persist upon page refresh. The page will remember which ideas a user has generated, favorited, or deleted. 
+  Users also have the ability to delete any card that they have created by clicking the **X** button at the top right corner of a given card. 
+  
+  [Idea Box - Delete Card](https://user-images.githubusercontent.com/87510749/134267461-cbdf2a45-3c6d-4c42-af6b-6318cafd7ae8.gif)
+
+  Finally, the cards that a user creates will persist upon page refresh. The page will remember which ideas a user has generated, or deleted.
 
 
 ## Technologies
-  - Javascript
+  - Javascript!
+
   - CSS HTML
   - Atom
   - Google Chrome or Web Browser of User's Choice
@@ -40,6 +47,7 @@ Mod1 2108 FE
   - [Kyra Bergsund](https://github.com/kbergsund)
   - [Wil Hufffman](https://github.com/Wil-Huffman)
   - [Colgan Meanor](https://github.com/colganmeanor)
+
 
 ## Wins
   - Completed iterations 1 - 3 and completed half of iteration 4 (the local storage implementation).
