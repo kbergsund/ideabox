@@ -120,5 +120,5 @@ function orangeStar(parentCard) {
 
 function whiteStar(parentCard) {
   var starImage = parentCard.childNodes[1].childNodes[1];
-  starImage.src = "./assets/star.svg";
+  starImage.src = "./assets/star.svg"
 }
