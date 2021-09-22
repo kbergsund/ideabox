@@ -1,5 +1,4 @@
 /* ~~~~~ GLOBAL RULES ~~~~~ */
-
 * {
   font-family: 'Open Sans';
   box-sizing: border-box;
@@ -23,7 +22,7 @@ h1 {
 
 h2 {
   color: #BFBFDD;
-  font-size: .8em;
+  font-size: .9em;
   padding-bottom: 5%;
 }
 
@@ -49,21 +48,22 @@ img {
   margin: 2%;
 }
 
+input,
+button,
+.sidenav div {
+  border: 2px solid #5356A4;
+  border-radius: 2px;
+}
+
 input {
   font-size: 1.4em;
 }
 
 button {
   background: #5356A4;
-  color:#E9E9F3;
+  color: #E9E9F3;
   padding: .5em 1.2em;
   font-size: 1em;
-}
-
-input,
-button {
-  border: 0;
-  border-radius: 2px;
 }
 
 button,
@@ -71,26 +71,35 @@ label {
   font-weight: 700;
 }
 
-input,
-button,
-.sidenav div {
-  border: 2px solid #5356A4;
-}
-
-.enabled {
+.enabled,
+img:hover {
   background: #353567;
   cursor: pointer;
 }
 
-.enabled:hover {
+.search-field img:hover,
+.comment-image:hover {
+  cursor: default;
+}
+
+.enabled:hover,
+.search-field img:hover,
+.comment-image:hover {
   background: #5356A4;
 }
 
 .hidden {
-  display: none!important;
+  display: none !important;
 }
 
-/* ~~~~~ SIDEBAR RULES ~~~~~ */
+/* ~~~~~ PAGE STRUCTURE RULES ~~~~~ */
+.sidenav div,
+.rightside,
+.create-idea,
+.idea-card {
+  display: flex;
+  flex-direction: column;
+}
 
 .sidenav {
   width: 30%;
@@ -99,12 +108,16 @@ button,
   color: white;
 }
 
+.rightside {
+  width: 100%;
+  justify-content: flex-start;
+}
+
+/* ~~~~~ SIDEBAR RULES ~~~~~ */
 .sidenav div {
   padding: 7%;
   border-left: 0;
   border-right: 0;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
 }
 
@@ -113,22 +126,12 @@ button,
   padding: .5em 0;
 }
 
-/* ~~~~~ MAIN SECTION RULES ~~~~~ */
-
-.rightside {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
+/* ~~~~~ CREATE CARD SECTION RULES ~~~~~ */
 .create-idea {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    height: 80%;
-    background: #A9AAD2;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 90%;
+  background: #A9AAD2;
 }
 
 .form-elements {
@@ -154,7 +157,6 @@ button,
 }
 
 .search-field button {
-  /* border-radius: 0; */
   padding: .5em;
   display: flex;
   align-items: center;
@@ -167,6 +169,7 @@ button,
   border-left: 0;
 }
 
+/* ~~~~~ DISPLAY CARD SECTION RULES ~~~~~ */
 .card-section {
   height: 100%;
   background: #EAEAF4;
@@ -177,22 +180,23 @@ button,
   align-items: flex-start;
 }
 
+.idea-card,
+.card-top {
+  justify-content: space-between;
+}
+
 .idea-card {
   background-color: #ffffff;
   border: 1px solid #353567;
-  width: 27%;
-  height: 40%;
+  width: 31%;
+  height: 45%;
   margin: 1%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   align-items: stretch;
 }
 
 .card-top {
   background: #1F1F3D;
   display: flex;
-  justify-content: space-between;
 }
 
 .card-bottom {
