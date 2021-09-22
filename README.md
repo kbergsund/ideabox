@@ -25,7 +25,7 @@ Mod1 2108 FE
 
   Users also have the ability to delete any card that they have created by clicking the **X** button at the top right corner of a given card. 
   
-  [Idea Box - Delete Card](https://user-images.githubusercontent.com/87510749/134267461-cbdf2a45-3c6d-4c42-af6b-6318cafd7ae8.gif)
+  ![Idea Box - Delete Card](https://user-images.githubusercontent.com/87510749/134267461-cbdf2a45-3c6d-4c42-af6b-6318cafd7ae8.gif)
 
   Finally, the cards that a user creates will persist upon page refresh. The page will remember which ideas a user has generated, or deleted.
 
