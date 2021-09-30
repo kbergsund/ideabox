@@ -1,4 +1,5 @@
 # IdeaBox 
+Turing School of Software & Design
 Mod 1 2108 FEE - Group Project
 
 A digital Post-It web app where users can create and save idea cards. Saved cards display on a grid and can be starred or deleted at any time. Users can leave the site or refresh and all saved cards/starred states will persist.
