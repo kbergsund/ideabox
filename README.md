@@ -1,7 +1,7 @@
 # IdeaBox 
 Mod1 2108 FE - Group Project
 
-A digital Post-It web app where users can create and save idea cards. Saved cards display on a grid and can be starred or deleteed at any time. Users can leave the site or refresh and all saved cards/starred states will persist.
+A digital Post-It web app where users can create and save idea cards. Saved cards display on a grid and can be starred or deleted at any time. Users can leave the site or refresh and all saved cards/starred states will persist.
 
 ## Deployable Link
 https://kbergsund.github.io/ideabox/
@@ -56,13 +56,13 @@ https://kbergsund.github.io/ideabox/
 
 ## Wins
   - Completed iterations 1 - 3 and half of iteration 4 (localStorage implementation).
-  - Gained valuable experience in the challenges of group dynamics- scheduling, working asynchronously vs synchronously.
+  - Gained valuable experience in navigating unique dynamics of group projects.
   - Learned a lot about separation of data model and DOM and the latter being dependent on the former.
   - First time applying knowledge of localStorage into a live project. 
   - Improved github workflow with working in separate branches, opening pull requests with proper comments, and merging branches on GitHub only with others present.
 
 ## Challenges + Improvements
-- Working asyncronously vs syncronously. Group scheduling conflicts made it difficult for us to find many times where all 3 of us could be present and working at the exact same time.
+- Working asynchronously vs synchronously. Group scheduling conflicts made it difficult for us to find many times where all 3 of us could be present and working at the exact same time.
 - Because of this and the challenge of the project, we unfortunately did not finish the entire spec. We fully completed iterations 0-3, but we only got halfway through iteration 4 (the local storage features) but were not able to complete the filtering functionalities in iteration 4, or any of iteration 5. 
 	
 ## Project Specs
