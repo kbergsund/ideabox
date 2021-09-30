@@ -16,7 +16,7 @@ https://kbergsund.github.io/ideabox/
 
 ## Learning Goals
  - Use clean HTML & CSS to match a provided comp
- - Understand hot to implement client-side data persistence
+ - Understand how to implement client-side data persistence
  - Continue exploring how to separate the data model (with a class) and the DOM
  - Begin to work with arrays in more advanced ways to filter data
 
@@ -25,7 +25,7 @@ https://kbergsund.github.io/ideabox/
   - On the command line, type: **$ open index.html**
 
 ## Web App Attributes
-  1. The page is fairly empty on load. Users have the ability to enter their own title and body. The card is generated and displayed (and also saved to the data model) via the **Save** button. Users can generate as many cards as they would like- the cards will display in a grid at the bottom half of the page. 
+  1. The page is fairly empty on load. Users have the ability to input their own title and body. The card is generated and displayed (and also saved to the data model) via the **Save** button. Users can generate as many cards as they would like- the cards will display in a grid at the bottom half of the page. 
   
   ![Idea Card - Generate Card](https://user-images.githubusercontent.com/87510749/134266874-4d5d83ce-1b85-443c-a485-dedb3a21b4a4.gif)
 
