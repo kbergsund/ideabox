@@ -7,7 +7,7 @@ A digital Post-It web app where users can create and save idea cards. Saved card
 https://kbergsund.github.io/ideabox/
 
 ## Languages/Technologies
-  - Javascript!
+  - Javascript
   - CSS 
   - HTML
   - Atom
